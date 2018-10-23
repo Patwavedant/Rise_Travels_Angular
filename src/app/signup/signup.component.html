@@ -1,0 +1,101 @@
+<div class="container">
+  <div id="login" class="signup-card">
+    <div class="logo-image">
+      <img src="../assets/images/logo_gradient_200x200.png" alt="Logo" title="Logo" width="138">
+    </div>
+    <h1 class="display4">- </h1>
+    <p class="subhead">Welcome to the TRIP App</p>
+
+    <div *ngIf="submitted && authUser" class="invalid-feedback">
+      <div *ngIf="submitted && authUser === 1" class="text-danger text-center">User already exist, <a [routerLink]="['/signin']">login</a> here.</div>
+      <div *ngIf="submitted && authUser === -1" class="text-danger text-center">Something went wrong, please try again later...</div>
+    </div>
+
+    <form class="" role="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div id="form-login-name" class="form-group">
+        <input id="name" class="form-control" name="name" type="text" size="25" required
+               formControlName="name" autofocus/>
+        <span class="form-highlight"></span>
+        <span class="form-bar"></span>
+        <label for="name" class="float-label">Name</label>
+
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required" class="text-danger">Name is required</div>
+        </div>
+
+      </div>
+
+      <div id="form-login-email" class="form-group">
+        <input id="email" class="form-control" name="email" type="email" size="25" alt="password" required
+               formControlName="email">
+        <span class="form-highlight"></span>
+        <span class="form-bar"></span>
+        <label for="email" class="float-label">E-mail</label>
+
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required" class="text-danger">E-mail is required</div>
+          <div *ngIf="f.email.errors" class="text-danger">Invalid e-mail</div>
+        </div>
+
+      </div>
+
+      <div id="form-login-password" class="form-group">
+        <input id="password" class="form-control" name="email" type="password" size="25" required
+               formControlName="password">
+        <span class="form-highlight"></span>
+        <span class="form-bar"></span>
+        <label for="password" class="float-label">Password</label>
+
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required" class="text-danger">Password is required</div>
+          <div *ngIf="f.password.errors.minlength" class="text-danger">Password must be at least 6 characters</div>
+        </div>
+
+      </div>
+
+      <div id="form-login-Confirm_password" class="form-group">
+        <input id="Confirm_password" class="form-control" name="email" type="password" size="25" required
+               formControlName="confirmPassword">
+        <span class="form-highlight"></span>
+        <span class="form-bar"></span>
+        <label for="Confirm_password" class="float-label">Confirm Password</label>
+
+        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+          <div *ngIf="f.confirmPassword.errors.required" class="text-danger">Password is required</div>
+          <div *ngIf="f.confirmPassword.errors.minlength" class="text-danger">Password must be at least 6 characters
+          </div>
+          <div *ngIf="form.controls.confirmPassword.errors?.MatchPassword" class="text-danger">Password not match</div>
+        </div>
+
+      </div>
+
+      <div id="form-login-contact" class="form-group">
+        <input id="contact" class="form-control" name="contact" type="number" size="10"
+               required
+               formControlName="contact">
+        <span class="form-highlight"></span>
+        <span class="form-bar"></span>
+        <label for="contact" class="float-label">Contact</label>
+
+        <div *ngIf="submitted && f.contact.errors" class="invalid-feedback">
+          <div *ngIf="f.contact.errors.minlength" class="text-danger">Contact must be at least 10 characters</div>
+          <div *ngIf="f.contact.errors.required" class="text-danger">Contact is required</div>
+
+        </div>
+
+      </div>
+
+      <div>
+        <button class="btn btn-block btn-info ripple-effect" type="submit" name="Submit">Sign
+          Up
+        </button>
+        <br/>
+        <p><a [routerLink]="['/signin']">I am already a member</a></p>
+      </div>
+      <p>
+        Form Status: {{ form.status }}
+      </p>
+    </form>
+  </div>
+</div>
