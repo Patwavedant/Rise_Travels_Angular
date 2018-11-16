@@ -6,14 +6,14 @@
 }
 
 .page {
-  padding: 40px;
+  padding: 30px;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-align-content: center;
   align-content: center;
-
+  
 }
 
 html, body {
@@ -24,7 +24,7 @@ html, body {
 }
 
 #splash {
-  background: #cc1f2f;
+  background: cyan;
   background-repeat: repeat-y;
   position: fixed;
   left: 0;
@@ -147,21 +147,21 @@ Button css
 }
 
 .draw-border::before {
-  border-bottom-width: 4px;
-  border-left-width: 4px;
+  border-bottom-width: 5px;
+  border-left-width: 5px;
 }
 
 .draw-border::after {
-  border-top-width: 4px;
-  border-right-width: 4px;
+  border-top-width: 5px;
+  border-right-width: 5px;
 }
 
 .draw-border:hover {
-  color: #ffe593;
+  color: black;
 }
 
 .draw-border:hover::before, .draw-border:hover::after {
-  border-color: #ffe593;
+  border-color: black;
   transition: border-color 0s, width 0.15s, height 0.15s;
   width: 100%;
   height: 100%;

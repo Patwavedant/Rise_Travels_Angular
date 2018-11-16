@@ -14,6 +14,12 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AddTripFormComponent } from './add-trip-form/add-trip-form.component';
+import { TripListComponent } from './trip-list/trip-list.component';
+import { SubHeaderComponent } from './sub-header/sub-header.component';
+import { ToastMessageComponent } from './toast-message/toast-message.component';
+import { TripManagePanelComponent } from './trip-manage-panel/trip-manage-panel.component';
+import { AddExpenseComponent } from './add-expense/add-expense.component';
+import { AddExpenseFormComponent } from './add-expense-form/add-expense-form.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +30,12 @@ import { AddTripFormComponent } from './add-trip-form/add-trip-form.component';
     DashboardComponent,
     LandingPageComponent,
     AddTripFormComponent,
+    TripListComponent,
+    SubHeaderComponent,
+    ToastMessageComponent,
+    TripManagePanelComponent,
+    AddExpenseComponent,
+    AddExpenseFormComponent,
 
   ],
   imports: [

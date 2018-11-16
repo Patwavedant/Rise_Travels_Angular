@@ -1,0 +1,22 @@
+<div *ngIf="tripListStatus === -1" class="text-danger text-center status"> 500 : Internal server error</div>
+<div *ngIf="tripListStatus === 0" class="text-info text-center status">Press <span class="add"> + </span> icon
+  to add more trips
+</div>
+
+<div class="row">
+  <div *ngFor="let tripList of tripLists" class="row">
+    <div class="col-md-6" id="{{tripList._id}}">
+      <div class="card flex-md-row mb-4 shadow-sm h-md-50">
+        <div class="card-body d-flex flex-column align-items-start">
+          <strong class="d-inline-block mb-2 text-primary">{{tripList.name}}</strong>
+          <p class="card-text mb-auto text-muted">Start Date: {{tripList.startDate}}</p>
+          <p class="card-text mb-auto text-muted">End Date: {{tripList.endDate}}</p>
+          <a class="btn btn-outline-primary btn-sm" role="button" [routerLink]="['/manage']" [queryParams]="{ id: tripList._id, name: tripList.name }">Manage Trip</a>
+        </div>
+        <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]"
+             src="{{tripList.url}}" style="width: 200px; height: 250px;" >
+      </div>
+    </div>
+  </div>
+</div>
+
